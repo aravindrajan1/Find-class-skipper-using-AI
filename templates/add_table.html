@@ -1,0 +1,452 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Class Skipper</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+ <script language="javascript">
+function validate()
+{
+	if(document.form1.name.value=="")
+	{
+	alert("Enter the Name");
+	document.form1.name.focus();
+	return false;
+	}
+	
+	if(document.form1.mobile.value=="")
+	{
+	alert("Enter the Mobile No.");
+	document.form1.mobile.focus();
+	return false;
+	}
+	if(isNaN(document.form1.mobile.value))
+	{
+	alert("Invalid Mobile No.");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.mobile.value.length!=10)
+	{
+	alert("Mobile No. must be 10 digits!");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.email.value=="")
+	{
+	alert("Enter the Email");
+	document.form1.email.focus();
+	return false;
+	}
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.form1.email.value))  
+	{
+	
+	}
+	else
+	{
+	alert("Invalid E-mail!");
+	document.form1.email.select();
+	return false;
+	}
+	if(document.form1.location.value=="")
+	{
+	alert("Enter the Location");
+	document.form1.location.focus();
+	return false;
+	}
+	
+	if(document.form1.uname.value=="")
+	{
+	alert("Enter the Username");
+	document.form1.uname.focus();
+	return false;
+	}
+	if(document.form1.pass.value=="")
+	{
+	alert("Enter the Password");
+	document.form1.pass.focus();
+	return false;
+	}
+	
+return true;
+}
+</script>
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <!--<div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>-->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="../static/index.html">
+                   <h2 style="color:#FFFFFF">Admin</h2>
+                   <!-- <b class="logo-abbr"><img src="../static/images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="../static/images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="../static/images/logo-text.png" alt="">
+                    </span>-->
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                       
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        
+                       
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="../static/images/profile.jpg" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile   dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                       
+                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    
+                   
+					<li>
+                        <a class="has-arrow" href="/admin" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        
+                    </li>
+					<li>
+                        <a class="has-arrow" href="/add_student" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Add Information</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="/add_dept">Add Department</a></li>
+                            <li><a href="/add_staff">Add Staff</a></li>
+                            <li><a href="/add_student">Add Student</a></li>
+                          
+                        </ul>
+                    </li>
+					<li>
+                        <a class="" href="/view_dept" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Department</span>
+                        </a>
+					</li>	
+					<li>
+                        <a class="" href="/view_staff" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Staff</span>
+                        </a>
+					</li>	
+					
+					<li>
+                        <a class="" href="/view_table" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">Timetable</span>
+                        </a>
+					</li>	
+					
+					<li>
+                        <a class="" href="/logout" aria-expanded="false">
+                           <i class="icon-notebook menu-icon"></i><span class="nav-text">Logout</span>
+                        </a>
+					</li>	
+						
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+							
+							<h3>Timetable</h3>
+                                <div class="form-validation">
+								{% if msg=="success" %}
+				  <span style="color:#009933">Updated...</span>
+				  
+				  <script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/view_table';
+}, 2000);
+</script>
+
+				  {% endif %}
+				  {% if msg=="fail" %}
+				  <span style="color:#FF0000">Already Exist!</span>
+				  {% endif %}
+                                    <form class="form-valide" action="" name="form1" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Department
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="dept" required>
+												<option value="">-Department-</option>
+												{% for ds in mdat %}
+												<option>{{ds[1]}}</option>
+												{% endfor %}
+												</select>
+                                            </div>
+                                        </div>
+									
+										<div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Staff 
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="staff" required>
+												<option value="">-Staff-</option>
+												{% for ds1 in sdat %}
+												<option value="{{ds1[5]}}">{{ds1[5]}}-{{ds1[1]}}</option>
+												{% endfor %}
+												</select>
+                                            </div>
+                                        </div>
+										
+										<div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Semester 
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="semester" required>
+												<option value="">-Semester-</option> 
+												<option value="1">Semester1</option>
+												<option value="2">Semester2</option>
+												<option value="3">Semester3</option>
+												<option value="4">Semester4</option>
+												<option value="5">Semester5</option>
+												<option value="6">Semester6</option>
+												<option value="7">Semester7</option>
+												<option value="8">Semester8</option>
+												</select>
+                                            </div>
+                                        </div>
+										<div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Subject 
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="subject" class="form-control" required>
+                                            </div>
+                                        </div>
+										
+										
+										<div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Period Start Time
+                                            </label>
+                                            <div class="col-lg-3">
+                                               <select name="t1" class="form-control" required>
+						  <option value="">-HH-</option>
+						  
+						  <option value="7">7 AM</option>
+						  <option value="8">8 AM</option>
+						  <option value="9">9 AM</option>
+						  <option value="10">10 AM</option>
+						  <option value="11">11 AM</option>
+						  <option value="12">12 PM</option>
+						  <option value="13">1 PM</option>
+						  <option value="14">2 PM</option>
+						  <option value="15">3 PM</option>
+						  <option value="16">4 PM</option>
+						  <option value="17">5 PM</option>
+						  <option value="18">6 PM</option>
+						  <option value="19">7 PM</option>
+						  
+						  
+						  </select>
+                                            </div>
+											 <div class="col-md-3">
+						  <select name="t2" class="form-control" required>
+						  <option value="">-MM-</option>
+						  <option>0</option>
+						  <option>5</option>
+						  <option>10</option>
+						  <option>15</option>
+						  <option>20</option>
+						  <option>25</option>
+						  <option>30</option>
+						  <option>35</option>
+						  <option>40</option>
+						  <option>45</option>
+						  <option>50</option>
+						  <option>55</option>
+						  </select>
+						  </div>
+											
+											
+											
+                                        </div>
+										<div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Period End Time
+                                            </label>
+                                            <div class="col-lg-3">
+                                                
+												<select name="t3" class="form-control" required>
+						  <option value="">-HH-</option>
+						  
+						  <option value="8">8 AM</option>
+						  <option value="9">9 AM</option>
+						  <option value="10">10 AM</option>
+						  <option value="11">11 AM</option>
+						  <option value="12">12 PM</option>
+						  <option value="13">1 PM</option>
+						  <option value="14">2 PM</option>
+						  <option value="15">3 PM</option>
+						  <option value="16">4 PM</option>
+						  <option value="17">5 PM</option>
+						  <option value="18">6 PM</option>
+						  <option value="19">7 PM</option>
+						  <option value="20">8 PM</option>
+						  
+						  </select>
+						  </div>
+						   <div class="col-md-3">
+						  <select name="t4" class="form-control" required>
+						  <option value="">-MM-</option>
+						  <option>0</option>
+						  <option>5</option>
+						  <option>10</option>
+						  <option>15</option>
+						  <option>20</option>
+						  <option>25</option>
+						  <option>30</option>
+						  <option>35</option>
+						  <option>40</option>
+						  <option>45</option>
+						  <option>50</option>
+						  <option>55</option>
+						  </select>
+						  </div>
+                                            </div>
+                                        </div>
+										
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary" onClick="return validate()">Submit</button>
+                                            </div>
+                                        </div>
+										
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Class Skipper <a href="https://themeforest.net/user/quixlab"></a> </p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="../static/plugins/common/common.min.js"></script>
+    <script src="../static/js/custom.min.js"></script>
+    <script src="../static/js/settings.js"></script>
+    <script src="../static/js/gleek.js"></script>
+    <script src="../static/js/styleSwitcher.js"></script>
+
+    <script src="../static/plugins/validation/jquery.validate.min.js"></script>
+    <script src="../static/plugins/validation/jquery.validate-init.js"></script>
+
+</body>
+
+</html>

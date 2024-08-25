@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+{% if st=="1" %}
+<span style="color:#003399">Staff:{{tdata[2]}}-{{staff}}</span><br>
+<span style="color:#003399">Subject:{{tdata[4]}}, Period: {{tdata[5]}}:{{tdata[6]}} to {{tdata[7]}}:{{tdata[8]}}</span><br>
+<span style="color:#FF0000">Student: {{value[1]}} [{{value[13]}}], Class Skipper</span>
+	{% if sms=="1" %}
+	<iframe src="http://iotcloud.co.in/testsms/sms.php?sms=emr&name=HOD&mess={{mess}}&mobile={{mobile}}" width="5" height="5" frameborder="0"></iframe>
+	{% endif %}
+<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/process2';
+}, 15000);
+</script>
+
+{% else %}
+<span style="color:#003399">No Period!</span>
+<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/process2';
+}, 5000);
+</script>
+{% endif %}
+
+
+
+
+
+
+
+</body>
+</html>

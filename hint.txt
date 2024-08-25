@@ -1,0 +1,7 @@
+
+set student,hod,staff details
+
+hod mobile number must
+
+
+set timetable

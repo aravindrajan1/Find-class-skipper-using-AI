@@ -1,0 +1,147 @@
+<html class="h-100" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Class Skipper</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link href="../static/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body class="h-100">
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+   <!-- <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>-->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <p align="right"><a href="/">Home</a></p>
+
+
+    <div class="login-form-bg h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+               
+			   
+			   
+			   <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+								<h4 align="center">Cam1-{{value[2]}}</h4>
+								
+						{% if cam1=="2" %}		
+					<img src="../static/getimg.jpg" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+						{% elif cam1=="1" %}
+					<img src="{{ url_for('video_feed') }}" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+					
+					<iframe src="/process1" width="350" height="100" frameborder="0"></iframe>
+					
+						{% endif %}
+						
+							<div align="center">
+								{% if cam1=="2" %}
+							<a href="/monitor?cam1=1&cam2=2&cam3=2">Start</a> 
+								{% else %}
+							<a href="/monitor?cam1=2&cam2=2&cam3=2">Stop</a>
+								{% endif %}
+							</div>
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+								<h4 align="center">Cam2-{{value[3]}}</h4>
+								
+						{% if cam2=="2" %}		
+					<img src="../static/getimg2.jpg" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+						{% elif cam2=="1" %}
+					<img src="{{ url_for('video_feed3') }}" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+					
+					<iframe src="/process2" width="350" height="100" frameborder="0"></iframe>
+					
+						{% endif %}
+								<div align="center">
+								{% if cam2=="2" %}
+							<a href="/monitor?cam1=2&cam2=1&cam3=2">Start</a> 
+								{% else %}
+							<a href="/monitor?cam1=2&cam2=2&cam3=2">Stop</a>
+								{% endif %}
+							</div>
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					<div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+								<h4 align="center">Cam3-{{value[4]}}</h4>
+								
+						{% if cam3=="2" %}		
+					<img src="../static/getimg3.jpg" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+						{% elif cam3=="1" %}
+					<img src="{{ url_for('video_feed4') }}" style="width:100%; border-radius: 5%; border:solid 3px #333333" class="img-fluid">
+					<iframe src="/process3" width="350" height="100" frameborder="0"></iframe>
+						{% endif %}
+								<div align="center">
+								{% if cam3=="2" %}
+							<a href="/monitor?cam1=2&cam2=2&cam3=1">Start</a> 
+								{% else %}
+							<a href="/monitor?cam1=2&cam2=2&cam3=2">Stop</a>
+								{% endif %}
+							</div>
+							
+							
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			   
+			   
+			  
+			   
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="../static/plugins/common/common.min.js"></script>
+    <script src="../static/js/custom.min.js"></script>
+    <script src="../static/js/settings.js"></script>
+    <script src="../static/js/gleek.js"></script>
+    <script src="../static/js/styleSwitcher.js"></script>
+</body>
+</html>
+
+
+
+
+
